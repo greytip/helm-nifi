@@ -48,7 +48,7 @@
         <property name="Users File">./auth-conf/users.xml</property>
         <property name="Legacy Authorized Users File"></property>
         {{- range $i := until $replicas }}
-        <property name="Initial User Identity {{ $i }}">john</property>
+        <property name="Initial User Identity {{ $i }}">saran@greytip.com</property>
         {{- end }}
         {{- if .Values.auth.ldap.enabled}}
         <property name="Initial User Identity admin">{{.Values.auth.ldap.admin}}</property>
@@ -223,7 +223,7 @@
         {{- if .Values.auth.ldap.enabled}}
         <property name="Initial Admin Identity">{{.Values.auth.ldap.admin}}</property>
         {{- else }}
-        <property name="Initial Admin Identity">john</property>
+        <property name="Initial Admin Identity">saran@greytip.com</property>
         {{- end}}
         <property name="Legacy Authorized Users File"></property>
         {{- if .Values.auth.ldap.enabled}}
