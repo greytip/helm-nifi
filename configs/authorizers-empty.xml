@@ -226,10 +226,8 @@
         <property name="Initial Admin Identity">saran@greytip.com</property>
         {{- end}}
         <property name="Legacy Authorized Users File"></property>
-        {{- if .Values.auth.ldap.enabled}}
         {{- range $i := until $replicas }}
         <property name="Node Identity {{ $i }}">CN={{ $fullname }}-{{ $i }}.{{ $fullname }}-headless.{{ $namespace }}.svc.cluster.local, OU=NIFI</property>
-        {{- end }}
         {{- end }}
         <property name="Node Identity"></property>
     </accessPolicyProvider>
